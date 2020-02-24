@@ -11,8 +11,11 @@ router.get('/',auth,async (req,res) => {
   try {
     console.log(req.user);
     const user = await User.findById(req.user.id).select("-password");
+    if(!user){
+      res.status(404).json({err:"No users found"});
+    }
     console.log("in get route "+user);
-    res.json(user);
+    res.status(200).json({user:user});
   } catch (error) {
     res.status(500).json({err:error})
   }
