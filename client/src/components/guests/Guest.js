@@ -1,12 +1,14 @@
 import React from 'react'
 
-const Guest = () => {
+const Guest = ({guest}) => {
+
+   const {name,phone,dietary,isconfirmed} = guest;
     return (
         <div class="guest-card">
         <div class="card-head">
           <div >
-            <label >Confirmed
-              <i className='fas fa-check-square'><input type="checkbox"  /> </i>
+            <label className={`${isconfirmed && 'confirm'}`}>Confirmed
+              <i className={`fas fa-check-square ${isconfirmed && 'confirm'}`}><input type="checkbox"/> </i>
             </label>
           </div>
           <div>
@@ -15,11 +17,11 @@ const Guest = () => {
           </div>
         </div>
         <div class="card-body">
-          <h2>deneme</h2>
-          <span className="badge red">deneme</span>
+          <h2>{name}</h2>
+          <span className={'badge' + (dietary === 'Non-Veg' ? 'red' : dietary==='Vegan' ? 'green' : 'seaGreen')}>{dietary}</span>
           <div class="contact">
             <i class="fas fa-phone-alt"></i>
-            <p>deneme</p>
+            <p>{phone}</p>
           </div>
         </div>
       </div>

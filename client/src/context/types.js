@@ -1,0 +1,3 @@
+export const TOGGLE_FILTER="TOGGLE_FILTER";
+export const SEARCH_GUEST="TOGGLE_FILTER";
+export const CLEAR_GUEST="TOGGLE_FILTER";
