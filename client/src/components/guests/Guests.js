@@ -6,7 +6,7 @@ const Guests = () => {
 
     //state içindeki değer 
     const {guests,filterGuest,search} = useContext(GuestContext);
-    console.log(!filterGuest);
+    //console.log(!filterGuest);
     return (
         <div className="guests">
             {/* filterguest initial state içinde false,reducerda tam tersine döndüğü için burdada tersini alıyoruz
